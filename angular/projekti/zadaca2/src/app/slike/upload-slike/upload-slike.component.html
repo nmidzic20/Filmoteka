@@ -1,0 +1,33 @@
+<header><h2>Upload slike</h2></header>
+<main>
+    <p *ngIf="formaVidljiva" style="text-align: center;">Prenesite sliku</p>
+    <form #form method="POST" action="/prijenosSlike" enctype="multipart/form-data" *ngIf="formaVidljiva">
+        <div class="grid-upload-slike">
+            <div>
+                <label for="id_film">Film:</label>
+            </div>
+            <div>
+                <select id="id_film" name="id_film" width="100px" [ngModel]="filmovi" class="form-control" required (ngModelChange)="dajOdabraniFilm($event)">
+                    <option [value]="">--</option>
+                    <option value="{{f.tmdb_id}}|{{f.naziv}}" *ngFor="let f of filmovi">{{f.naziv}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="slika">Slika:</label>
+            </div>
+            <div>
+                <input type="file" id="slika" name="slika" class="form-control" required (change)="onFileSelected($event)">
+            </div>
+            <div>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" type="submit" class="btn btn-success" 
+                    [disabled]="!validacija || captcha == ''"
+                    (click)="(odabraniFilmNaziv != '--') ? form.submit() : false">Submit</button>
+            </div>
+        </div>
+        
+    </form>
+</main>
+
+

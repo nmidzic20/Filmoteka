@@ -1,0 +1,30 @@
+export interface FilmI 
+{
+    budzet?:string,
+    z_naziv?:string,
+    zanr_id?:number,
+    originalni_naziv?:string,
+    
+    odrasli_film:boolean;
+    putanja_pozadine:string;
+    tmdb_id:string;
+    originalni_jezik:string;
+    originalni_naslov:string;
+    sazetak:string;
+    popularnost:number;
+    putanja_postera:string;
+    datum_izlaska:string;
+    naziv:string;
+    video:boolean;
+    prosjek_glasova:number;
+    broj_glasova:number;
+    korisnik_dodao:string; 
+    datum_dodan:string;
+    odobren:boolean;
+    pocetna_stranica:string;
+    imdb_id:string;
+    prihod:string;
+    trajanje:number;
+    status:string;
+    slogan:string;
+}

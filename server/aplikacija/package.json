@@ -1,0 +1,17 @@
+{
+  "name": "aplikacija",
+  "version": "1.0.0",
+  "description": "zadaca2 aplikacija",
+  "main": "appServer.js",
+  "scripts": {
+    "start": "NODE_PATH=/usr/lib/node_modules/ node --experimental-fetch appServer.js ../konfiguracija.csv",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zadaca",
+    "2",
+    "aplikacija"
+  ],
+  "author": "Noa Midžić",
+  "license": "GPL-2.0-only"
+}

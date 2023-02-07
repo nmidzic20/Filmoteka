@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+*:not(button,mat-card-title,mat-card-subtitle) {
+    font: {
+        family: "Fira Sans", sans-serif !important;
+        size: 20px;
+    }
+    line-height: 1.6;
+}
+
+html, body { 
+    height: 100%; 
+    margin: 0px; 
+    background-color: cornflowerblue;
+}
+
+.mat-h2 { font-weight: bold; }
+
+h2 {
+    font-weight: bold !important;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+}

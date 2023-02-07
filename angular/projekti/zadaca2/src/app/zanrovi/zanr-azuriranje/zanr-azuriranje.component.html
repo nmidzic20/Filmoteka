@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Ažuriraj žanr</h2>
+<mat-dialog-content>
+    <table>
+        <tr>
+            <td>
+                Id žanra: {{zanr.z_tmdb_id}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Naziv žanra: {{zanr.z_naziv}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Novi naziv žanra:</label>
+            </td>
+            <td>
+                <input class="form-control" required type="text" [(ngModel)]="noviNazivZanra" [value]="zanr.z_naziv">
+            </td>
+        </tr>
+    </table>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="azuriraj()">Ažuriraj</button>
+    <button mat-raised-button color="primary" mat-dialog-close>Povratak</button>
+</mat-dialog-actions>
+
+

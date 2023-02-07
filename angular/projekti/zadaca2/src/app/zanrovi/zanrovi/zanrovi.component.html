@@ -1,0 +1,35 @@
+<header><h2>Žanrovi</h2></header>
+<main *ngIf="status == 200">
+    <div class="grid-zanrovi">
+
+    <div class="grid-stupac-zanrovi">
+    <p><strong>Žanrovi u bazi</strong></p>
+    <button mat-raised-button color="primary" (click)="obrisiSveZanroveBezFilmova()">Obriši sve žanrove bez filmova</button>
+    <app-stranicenje #stranicenjeZanrovi (promjenaStranicenje)="dajZanrove($event)"></app-stranicenje>
+    <ul *ngFor="let z of zanrovi; let i = index">
+        <li *ngIf="i >= stranicenjeZanrovi.donjaGranica && i < stranicenjeZanrovi.gornjaGranica">
+            {{zanrovi[i].z_naziv}}
+            <button mat-raised-button color="primary" (click)="azurirajZanr(z)">Ažuriraj</button>
+            <button mat-raised-button color="primary" (click)="obrisiZanr(z)">Obriši iz baze</button>
+        </li>
+    </ul>
+    </div>
+
+    <div class="grid-stupac-zanrovi-tmdb">
+    <p><strong>Žanrovi TMDB</strong></p>
+    <button mat-raised-button color="primary" (click)="dajZanroveTMDB(1)">Povuci žanrove s TMDB servisa</button>
+    <button mat-raised-button color="primary" (click)="dodajSve()" *ngIf="this.zanroviTMDB.length != 0">Dodaj sve</button>
+    <app-stranicenje #stranicenjeZanroviTMDB (promjenaStranicenje)="dajZanroveTMDB($event)"></app-stranicenje>
+    <ul *ngFor="let z of zanroviTMDB; let i = index">
+        <li *ngIf="i >= stranicenjeZanroviTMDB.donjaGranica && i < stranicenjeZanroviTMDB.gornjaGranica">
+            {{zanroviTMDB[i].name}}
+            <button mat-raised-button color="primary" (click)="dodajZanr(z.id)">Dodaj žanr u bazu</button>
+        </li>
+    </ul>
+    </div>
+
+    </div>
+
+</main>
+
+

@@ -1,0 +1,27 @@
+<header><h2>Pregled filmova</h2></header>
+<main>
+    <div class="filtri" *ngIf="status == 200">
+        Filter: <input type="text" placeholder="Kljucne rijeci" [ngModel]="kljucneRijeciFiltar" (ngModelChange)="dajRijeciFiltra($event)">
+        Žanr:
+        <select [ngModel]="odabraniZanr" (ngModelChange)="dajOdabraniZanr($event)" class="form-control" required>
+            <option [value]="">--</option>
+            <option [ngValue]="z" *ngFor="let z of zanrovi">{{z.z_naziv}}</option>
+        </select>
+        Od datuma dodavanja: <input type="date" [ngModel]="odabraniDatum" (ngModelChange)="dajOdabraniDatum($event)" class="form-control" required>
+        Sortiraj po: 
+        <select [ngModel]="sortOdabranaOpcija" (ngModelChange)="dajSortOdabranuOpciju($event)" class="form-control" required>
+            <option [value]="opcija" *ngFor="let opcija of selectSortOpcije">{{opcija}}</option>
+        </select>
+    </div>
+    <app-stranicenje #stranicenjeFilmoviPregled (promjenaStranicenje)="dajFilmove($event)"></app-stranicenje>
+
+    <mat-grid-list cols="4" rowHeight="600px">
+        <mat-grid-tile *ngFor="let f of filmoviZaPrikaz"
+            (mouseover)="oznaciFilm(f)" (click)="otvoriDetaljeFilma(f)">
+            <app-film-card [filmCard]="f" [klasaBojaKartice]="dajKlasu()"></app-film-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+<br><br>    
+</main>
+

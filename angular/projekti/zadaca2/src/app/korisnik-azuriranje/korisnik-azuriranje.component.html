@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Ažuriraj korisničke podatke</h2>
+<mat-dialog-content>
+    <table>
+        <tr>
+            <td>
+                <label>Ime:</label>
+            </td>
+            <td>
+                <input class="form-control" required type="text" [(ngModel)]="ime" [value]="korisnik.ime">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Prezime:</label>
+            </td>
+            <td>
+                <input class="form-control" required type="text" [(ngModel)]="prezime" [value]="korisnik.prezime">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div>{{this.poruka}}</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="azuriraj()">Ažuriraj</button>
+    <button mat-raised-button color="primary" mat-dialog-close>Povratak</button>
+</mat-dialog-actions>
+
+

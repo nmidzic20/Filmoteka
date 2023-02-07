@@ -1,0 +1,13 @@
+$redak: 40px;
+
+.grid-upload-slike {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width:fit-content;
+    margin:auto;    
+    grid-template-columns: 100px 650px;
+    grid-template-rows: $redak $redak $redak;
+}
+
+

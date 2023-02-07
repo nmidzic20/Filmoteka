@@ -1,0 +1,37 @@
+<h2 mat-dialog-title id="naslov">Detalji filma {{film.naziv}}</h2>
+<mat-dialog-content class="prozor">
+    <mat-card class="film-card">
+        <mat-card-header class="header">
+            <mat-card-title>
+                <span>{{film.naziv}}</span>
+            </mat-card-title>
+            <mat-card-subtitle *ngIf="film.tmdb_id">        
+                <a [href]="galerijaSlikaURL">Galerija slika</a>
+                <p>
+                    <i *ngIf="film.slogan != ''">"{{film.slogan}}"</i>
+                </p>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="poster"
+            [src]="posterURL" 
+            [alt]="posterURL" *ngIf="film.tmdb_id">
+        <mat-card-content *ngIf="film.tmdb_id">
+            <br>
+            <p class="istaknuto">
+                <button mat-stroked-button color="primary">Žanr: {{film.z_naziv}}</button>
+                <button mat-stroked-button color="primary">{{film.status}}</button>
+                <button mat-stroked-button color="primary">{{film.trajanje}} minuta</button>
+            </p>
+            <br><br>
+            <p style="clear:left">
+                {{film.sazetak}}
+            </p>
+            <p *ngFor="let i of informacije | keyvalue: originalOrder">
+                <strong>{{i.key}}:</strong> {{i.value}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" mat-dialog-close>Povratak</button>
+</mat-dialog-actions>

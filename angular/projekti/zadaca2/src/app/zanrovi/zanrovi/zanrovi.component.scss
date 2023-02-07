@@ -1,0 +1,10 @@
+$sirina-stupca: 700px;
+
+.grid-zanrovi {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width:fit-content;
+    margin:auto;    
+    grid-template-columns: $sirina-stupca $sirina-stupca;
+}

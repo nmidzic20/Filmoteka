@@ -1,0 +1,20 @@
+<mat-card class="film-card" [ngClass]="klasaBojaKartice">
+    <mat-card-header>
+        <mat-card-title>{{filmCard.naziv}}</mat-card-title>
+        <mat-card-subtitle>TMDB id filma: {{filmCard.tmdb_id}}<br></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://image.tmdb.org/t/p/w500{{filmCard.putanja_pozadine}}" alt="https://image.tmdb.org/t/p/w500{{filmCard.putanja_pozadine}}">
+    <mat-card-content>
+        <br>
+        <p>
+        {{filmCard.sazetak}}
+        </p>
+        <p>
+            <strong>Kliknite na karticu za detalje filma</strong>
+        </p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="filmoviPrijedlozi">
+        <button mat-raised-button color="primary" (click)="odobri(); $event.stopPropagation();">Odobri</button>
+        <button mat-raised-button color="primary" (click)="obrisi(); $event.stopPropagation();">Obriši</button>
+    </mat-card-actions>
+</mat-card>

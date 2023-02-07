@@ -1,0 +1,42 @@
+<header><h2>Registracija</h2></header>
+<main>
+    <div class="grid-registracija">
+        <div>
+            <label for="ime">Ime</label>
+        </div>
+        <div>
+            <input class="form-control" required type="text" [(ngModel)]="ime">
+        </div>
+        <div>
+            <label for="prezime">Prezime</label>
+        </div>
+        <div>
+            <input class="form-control" required type="text" [(ngModel)]="prezime">
+        </div>
+        <div>
+            <label for="lozinka">Lozinka</label>
+        </div>
+        <div>
+            <input class="form-control" required type="password" [(ngModel)]="lozinka">
+        </div>
+        <div>
+            <label for="email">Email</label>
+        </div>
+        <div>
+            <input class="form-control" required type="email" [(ngModel)]="email">
+        </div>
+        <div>
+            <label for="korime">Korisničko ime</label>
+        </div>
+        <div>
+            <input class="form-control" required type="text" [(ngModel)]="korime">
+        </div>
+        <div>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="registriraj()">Registriraj se</button>
+        </div>
+    </div>
+</main>
+
+

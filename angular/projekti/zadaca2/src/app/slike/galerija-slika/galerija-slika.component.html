@@ -1,0 +1,35 @@
+<h2>Galerija slika za film {{filmNaziv}}</h2>
+<mat-form-field appearance="fill" *ngIf="vidljivo" class="datum-filtar">
+    <mat-label>Unesite datume</mat-label>
+    <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+        <input matStartDate placeholder="Početni datum" formControlName="start" (dateChange)="dajPocetniDatum()">
+        <input matEndDate placeholder="Završni datum" formControlName="end" (dateChange)="dajZavrsniDatum()">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    <mat-error *ngIf="dateRange.controls['start'].hasError('matStartDateInvalid')">Nevažeći početni datum</mat-error>
+    <mat-error *ngIf="dateRange.controls['end'].hasError('matEndDateInvalid')">Nevažeći završni datum</mat-error>
+</mat-form-field>
+
+<p *ngIf="vidljivo">
+    Početni datum: {{dateRange.value.start | date}}
+    <br>
+    Završni datum: {{dateRange.value.end | date}}
+</p>
+
+<div class="grid-galerija-slika">
+    <figure *ngFor="let url of urloviSlike">
+        <a href="/film/{{filmId}}">
+            <img [src]="url" [alt]="url" class="slika">
+        </a>
+        <figcaption>
+            <strong>
+                Dodao: {{slikeInfo.get(url)?.dodao_korisnik}}
+            </strong>
+        </figcaption>
+    </figure>
+</div>
+
+
+

@@ -1,0 +1,25 @@
+.grid-galerija-slika {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width:fit-content;
+    margin:auto;    
+    grid-template-columns: 1fr 1fr;
+}
+
+.slika {
+    width: 600px;
+    height: 500px;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.datum-filtar {
+    width: fit-content;
+    margin: auto;
+}
+
+
+

@@ -1,0 +1,26 @@
+<div class="nav_kontejner">
+    <nav>
+        <ul>
+            <li><img id="logo" src="../assets/logo.png" alt="LOGO"></li>
+            <li id="filmoteka_naslov">Filmoteka</li>
+            <li><a routerLink="/pocetna" (click)="putanja='pocetna'" routerLinkActive="active" ariaCurrentWhenActive="page">Početna</a></li>
+            <li><a routerLink="/prijava" (click)="putanja='prijava'" *ngIf="!prijavljen" routerLinkActive="active" ariaCurrentWhenActive="page">Prijava </a></li>
+            <li><a routerLink="/registracija" (click)="putanja='registracija'" *ngIf="!prijavljen" routerLinkActive="active" ariaCurrentWhenActive="page">Registracija </a></li>
+            <li><a routerLink="/dokumentacija" (click)="putanja='dokumentacija'" routerLinkActive="active" ariaCurrentWhenActive="page">Dokumentacija </a></li>
+
+            <li><a routerLink="/pretrazivanjeFilmovi" (click)="putanja='pretrazivanjeFilmovi'" *ngIf="korisnik?.tip_korisnika_id! <= 2" routerLinkActive="active" ariaCurrentWhenActive="page">Pretraživanje filmova </a></li>
+            <li><a routerLink="/pregledFilmovi" (click)="putanja='pregledFilmovi'" *ngIf="korisnik?.tip_korisnika_id! <= 2" routerLinkActive="active" ariaCurrentWhenActive="page">Pregled filmova </a></li>
+            <li><a routerLink="/prijedloziFilmovi" (click)="putanja='prijedloziFilmovi'" *ngIf="korisnik?.tip_korisnika_id==1" routerLinkActive="active" ariaCurrentWhenActive="page">Prijedlozi filmova </a></li>
+            <li><a routerLink="/uploadSlike" (click)="putanja='uploadSlike'" *ngIf="korisnik?.tip_korisnika_id! <= 2" routerLinkActive="active" ariaCurrentWhenActive="page">Upload slike </a></li>
+            <li><a routerLink="/zanrovi" (click)="putanja='zanrovi'" *ngIf="korisnik?.tip_korisnika_id==1" routerLinkActive="active" ariaCurrentWhenActive="page">Žanrovi </a></li>
+            <li><a routerLink="/profil" (click)="putanja='profil'" *ngIf="korisnik?.tip_korisnika_id! <= 2" routerLinkActive="active" ariaCurrentWhenActive="page">Moj profil </a></li>
+            <li><a routerLink="/odjava" (click)="odjavi()" *ngIf="korisnik?.tip_korisnika_id! <= 2" routerLinkActive="active" ariaCurrentWhenActive="page">Odjava </a></li>
+
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+<app-podnozje [validacijaURL]="validacijeURLovi.get(putanja)!"></app-podnozje>

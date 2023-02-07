@@ -1,0 +1,36 @@
+<div>
+    <p>Upute za testiranje:</p> 
+    <p>
+        Korišten je Angular Material (potreban za dialog, date picker, gumbe...),
+        pa ga je potrebno lokalno instalirati unutar Angular okruženja (ng add @angular/material).
+        Ponudit će neke opcije, moji su odabiri bili deep-purple-amber theme, defaultna opcija
+        za typography i za animacije. 
+    </p>
+    <p>
+        Korištena je ng-recaptcha za reCaptchu v3, treba lokalno instalirati unutar Angular
+        okruženja (npm install ng-recaptcha)
+    </p>
+    <p>Ako naredbe slučajno zadaju problem s dopuštenjima treba instalirati sa sudo opcijom
+        na Linuxu (sudo npm install...) ili pokretanjem cmd-a kao administrator na Windowsu
+    </p>
+    <p>
+        Tablice s opisima napravljenih stvari za REST, APP i zadaću 2 su dolje. Potrebno je provjeriti
+        NODE_PATH putanje i postaviti svoje TMDB ključeve u konfiguracijsku datoteku.
+    </p>
+    <p> 
+        REST server se pokreće iz foldera server/servis naredbom npm start, pokrenut će se na portu 4300
+    </p>
+    <p> 
+        Aplikacija se pokreće iz foldera server/aplikacija naredbom npm start, pokrenut će se na portu 4301.
+        (Pozadinski dio aplikacije poslužuje Angular na tom portu pa se projekt ne pokreće s ng serve)
+    </p>
+    <p> 
+        Kad su REST servis i aplikacija pokrenuti, aplikacija se može testirati na localhost:4301
+    </p>
+    <p>
+        Za galeriju slika je za neke filmove već dodano više slika (Wakanda Forever,
+        Avarar the Way of Water, The Chronicles of Narnia,
+        The Last Airbender, Harry Potter and the Philosopher's Stone)
+    </p>
+</div>
+<div [innerHTML]="stranica"></div>

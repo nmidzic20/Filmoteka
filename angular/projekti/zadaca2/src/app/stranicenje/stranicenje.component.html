@@ -1,0 +1,9 @@
+<div *ngIf="kolicinaSadrzajaZaPrikaz != 0" class="stranicenje">
+    <button mat-raised-button color="primary" *ngIf="gumbPrvi.vidljiv" (click)="klikPromjenaStranice(gumbPrvi.skociNaStranicu)">&lt;&lt;</button>
+    <button mat-raised-button color="primary" *ngIf="gumbNatrag.vidljiv" (click)="klikPromjenaStranice(gumbNatrag.skociNaStranicu)">&lt;</button>
+    <button mat-raised-button color="primary" *ngIf="gumbNaprijed.vidljiv" (click)="klikPromjenaStranice(gumbNaprijed.skociNaStranicu)">&gt;</button>
+    <button mat-raised-button color="primary" *ngIf="gumbZadnji.vidljiv" (click)="klikPromjenaStranice(gumbZadnji.skociNaStranicu)">&gt;&gt;</button>
+    <button mat-raised-button color="primary" *ngIf="gumbTrenutnaStranica.vidljiv" (click)="klikPromjenaStranice(gumbTrenutnaStranica.skociNaStranicu)">
+        {{trenutnaStranica}}/{{ukupnoStranica}}
+    </button>
+</div>

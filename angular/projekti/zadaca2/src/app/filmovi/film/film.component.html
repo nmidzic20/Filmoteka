@@ -1,0 +1,18 @@
+<div *ngIf="film" id="glavni">
+    <img [src]="posterURL" [alt]="posterURL" height='600'>
+    <br>
+    <a [href]="galerijaSlikaURL">Galerija slika</a>
+    <br>
+    <p class="istaknuto">
+        <button mat-stroked-button color="primary">Žanr: {{film.z_naziv}}</button>
+        <button mat-stroked-button color="primary">{{film.status}}</button>
+        <button mat-stroked-button color="primary">{{film.trajanje}} minuta</button>
+    </p>
+    <br><br>
+    <p style="clear:left">
+        {{film.sazetak}}
+    </p>
+    <p *ngFor="let i of informacije | keyvalue: originalOrder">
+        <strong>{{i.key}}:</strong> {{i.value}}
+    </p>
+</div>
